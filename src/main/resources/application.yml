@@ -1,0 +1,98 @@
+server:
+  port: 8087
+
+# 项目相关配置
+lb:
+  # 名称
+  name: lb
+  # 版本
+  version: 3.8.1
+  # 版权年份
+  copyrightYear: 2022
+  # 实例演示开关
+  demoEnabled: true
+  # 文件路径 示例（ Windows配置D:/ruoyi/uploadPath，Linux配置 /home/ruoyi/uploadPath）
+  profile: D:/ruoyi/uploadPath
+  # 获取ip地址开关
+  addressEnabled: false
+  # 验证码类型 math 数组计算 char 字符验证
+  captchaType: char
+
+# token配置
+token:
+    # 令牌自定义标识
+    header: Authorization
+    # 令牌密钥
+    secret: abcdefghijklmnopqrstuvwxyz
+    # 令牌有效期（默认30分钟）
+    expireTime: 30
+  
+
+spring:  
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/test?useUnicode=true&characterEncoding=utf8&serverTimezone=UTC
+    username: root
+    password: 123456
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true      
+  servlet:
+    multipart:
+      max-file-size: 100MB
+      max-request-size: 1000MB
+  # redis 配置
+  redis:
+    # 地址
+    host: localhost
+    # 端口，默认为6379
+    port: 6379
+    # 数据库索引
+    database: 0
+    # 密码
+    password: 
+    # 连接超时时间
+    timeout: 10s
+    lettuce:
+      pool:
+        # 连接池中的最小空闲连接
+        min-idle: 0
+        # 连接池中的最大空闲连接
+        max-idle: 8
+        # 连接池的最大数据库连接数
+        max-active: 8
+        # #连接池最大阻塞等待时间（使用负值表示没有限制）
+        max-wait: -1ms        
+
+pagehelper:
+  reasonable: true
+  support-methods-arguments: true
+  params: count=countSql
+    
+mybatis:
+  mapper-locations: classpath:mapper/*.xml
+  
+#SpringBoot整合Mybatis打印sql语句
+logging:
+  level:
+    com.lb.mapper: debug
+  pattern:
+    dateformat: HH:mm:ss
+
+#ftp服务器的地址
+ftp:
+  host: 10.3.19.14
+  port: 21
+  username: lb
+  password: 123456
+  filepath: /a/
+  web:
+    host: 10.3.19.14
+    port: 8087
+ 
+rocketmq:
+  name-server: 127.0.0.1:9876
+  producer:
+    group: my-producer-group
+

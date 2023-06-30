@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>文件上传</title>
+</head>
+<body>
+<label class="layui-form-label">单文件上传：</label>
+<form method="post" action="/log/ftp1" enctype="multipart/form-data">
+    <input type="file" name="file">
+    <br><br>	
+    <input type="submit" value="提交">
+</form>
+</body>
+<br>
+<label class="layui-form-label">----------------------------------------</label>
+<br>
+<br>
+
+<body>
+<label class="layui-form-label">多文件上传：</label>
+<form method="post" action="log/ftp" enctype="multipart/form-data">
+    <input type="file" name="file"><br>
+    <input type="file" name="file"><br>
+    <input type="file" name="file"><br>
+    <br>
+    <input type="submit" value="提交">
+</form>
+</body>
+</html>

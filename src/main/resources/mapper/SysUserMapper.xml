@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+
+<mapper namespace="com.lb.mapper.SysUserMapper">
+
+<sql id="table">User</sql>
+
+<select id="selectUserByUserName" resultType="com.lb.entity.SysUser">
+select * from <include refid="table"/> where userName = #{username} and newPassWord = #{password}
+</select>
+
+ <select id="selectUserByUserNames" resultType="com.lb.entity.SysUser">
+  select * from <include refid="table"/> where userName = #{username}
+ </select>
+
+
+<insert id="resign" useGeneratedKeys="true" keyProperty="id" parameterType="com.lb.entity.SysUser">
+insert into <include refid="table"/> (id,userName,password,salt,create_date_time,newPassWord,oldPassWord)
+ values(#{id},#{userName},#{password},#{salt},#{createDateTime},#{newPassWord},#{oldPassWord})
+</insert>
+
+</mapper>
