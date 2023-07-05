@@ -3,6 +3,7 @@ package com.lb.controller;
 import java.util.HashMap;
 import java.util.Map;
 
+import com.lb.entity.SysJob;
 import org.quartz.JobDataMap;
 import org.quartz.JobKey;
 import org.quartz.Scheduler;
@@ -40,7 +41,7 @@ public class SysJobController
     {
     	Map ajax = new HashMap();
 
-    	scheduler.pauseJob(getJobKey("job1", "group1"));
+    	scheduler.pauseJob(getJobKey("0/8 * * * * ?", "0/8 * * * * ?"));
     	ajax.put("code", 200);
     	ajax.put("msg", "成功！");
         return ajax;
@@ -50,10 +51,10 @@ public class SysJobController
      * 恢复定时任务
      */
     @PostMapping("/resume")
-    public Map resumeJob() throws SchedulerException
+    public Map resumeJob(SysJob sysJob) throws SchedulerException
     {
     	Map ajax = new HashMap();
-        JobKey jobKey = getJobKey("job1", "group1");
+        JobKey jobKey = getJobKey("0/8 * * * * ?", "0/8 * * * * ?");
         if (!scheduler.checkExists(jobKey))
         {
         	//不存在的话创建一个
