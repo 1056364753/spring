@@ -95,7 +95,7 @@ public class SysLoginService
         String verifyKey = "Code:" + uuid;
         String captcha = redisCache.getCacheObject(verifyKey);
         if (captcha == null || !code.equalsIgnoreCase(captcha)){
-        	throw new Exception("校验验证码错误！");
+        	throw new Exception("校验验证码错误！!!");
         }else {
             System.out.println("校验验证码成功！");
             redisCache.deleteObject(verifyKey);
