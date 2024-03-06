@@ -97,7 +97,7 @@ public class SysLoginService
         if (captcha == null || !code.equalsIgnoreCase(captcha)){
         	throw new Exception("校验验证码错误！!!");
         }else {
-            System.out.println("校验验证码成功！");
+            System.out.println("校验验证码成功！123213");
             redisCache.deleteObject(verifyKey);
         }
     }
