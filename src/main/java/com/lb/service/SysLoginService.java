@@ -98,6 +98,10 @@ public class SysLoginService
         	throw new Exception("校验验证码错误！");
         }else {
             System.out.println("校验验证码成功！");
+            System.out.println("校验验证码成功！");
+            System.out.println("校验验证码成功！");
+            System.out.println("校验验证码成功！");
+
             redisCache.deleteObject(verifyKey);
         }
     }
