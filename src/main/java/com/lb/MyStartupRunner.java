@@ -19,6 +19,8 @@ public class MyStartupRunner implements CommandLineRunner {
         System.out.println(">>>>>>>>>>>>>>>定时任务开始执行!!!<<<<<<<<<<<<<");
         System.out.println(">>>>>>>>>>>>>>>定时任务开始执行!!!<<<<<<<<<<<<<");
         System.out.println(">>>>>>>>>>>>>>>定时任务开始执行!!!<<<<<<<<<<<<<");
+        System.out.println(">>>>>>>>>>>>>>>111!!!<<<<<<<<<<<<<");
+        System.out.println(">>>>>>>>>>>>>>>222!!!<<<<<<<<<<<<<");
 
     }
 }
