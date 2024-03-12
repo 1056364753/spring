@@ -17,6 +17,7 @@ public class MyStartupRunner implements CommandLineRunner {
         scheduleJobs.scheduleJobs();
         System.out.println(">>>>>>>>>>>>>>>定时任务开始执行!!!<<<<<<<<<<<<<");
         System.out.println(">>>>>>>>>>>>>>>定时任务开始执行!!!<<<<<<<<<<<<<");
+        System.out.println(">>>>>>>>>>>>>>>定时任务开始执行!!!<<<<<<<<<<<<<");
 
     }
 }
