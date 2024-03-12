@@ -93,7 +93,7 @@ public class SysLoginService
     public void validateCaptcha(String username, String code, String uuid) throws Exception
     {
         String verifyKey = "Code:" + uuid;
-        System.out.println("校验验证码成功！");
+        System.out.println("111！");
         System.out.println("222！");
         System.out.println("校验验证码成功！");
         System.out.println("校验验证码成功！");
