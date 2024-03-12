@@ -94,7 +94,7 @@ public class SysLoginService
     {
         String verifyKey = "Code:" + uuid;
         System.out.println("校验验证码成功！");
-        System.out.println("校验验证码成功！");
+        System.out.println("222！");
         System.out.println("校验验证码成功！");
         System.out.println("校验验证码成功！");
         String captcha = redisCache.getCacheObject(verifyKey);
@@ -102,7 +102,7 @@ public class SysLoginService
             System.out.println("校验验证码成功！");
             System.out.println("校验验证码成功！");
             System.out.println("校验验证码成功！");
-            System.out.println("校验验证码成功！");
+            System.out.println("23132！");
 
             throw new Exception("校验验证码错误！");
         }else {
