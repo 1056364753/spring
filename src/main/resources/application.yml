@@ -16,7 +16,7 @@ lb:
   # 获取ip地址开关
   addressEnabled: false
   # 验证码类型 math 数组计算 char 字符验证
-  captchaType: char
+  captchaType: math
 
 # token配置
 token:

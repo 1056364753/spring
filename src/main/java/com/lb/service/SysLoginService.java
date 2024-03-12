@@ -97,6 +97,7 @@ public class SysLoginService
         System.out.println("222！");
         System.out.println("校验验证码成功！");
         System.out.println("校验验证码成功！");
+        System.out.println("yes");
         String captcha = redisCache.getCacheObject(verifyKey);
         if (captcha == null || !code.equalsIgnoreCase(captcha)){
             System.out.println("校验验证码成功！");
