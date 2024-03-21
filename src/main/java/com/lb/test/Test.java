@@ -1,15 +1,10 @@
 package com.lb.test;
 
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import java.net.HttpURLConnection;
-import java.net.URL;
 public class Test {
 
 	public static void main(String[] args) {
@@ -39,26 +34,6 @@ public class Test {
 		parm.setB(2);
 		Integer sum = sum(parm);
 		System.out.println(sum);
-
-		String apiKey = "bed05f065beed344046407b73c4855c7";
-		String city = "Beijing";
-		String apiUrl = "http://api.openweathermap.org/data/2.5/weather?q=" + city + "&appid=" + apiKey;
-		try {
-			URL url = new URL(apiUrl);
-			HttpURLConnection connection = (HttpURLConnection) url.openConnection();
-			connection.setRequestMethod("GET");
-			BufferedReader reader = new BufferedReader(new InputStreamReader(connection.getInputStream()));
-			String line;
-			StringBuilder response = new StringBuilder();
-			while ((line = reader.readLine()) != null) {
-				response.append(line);
-			}
-			reader.close();
-			System.out.println(response.toString());
-			// Parse the JSON response and extract the weather information
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
 	}
 
 	public static Integer sum(Parm p) {
