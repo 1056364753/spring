@@ -93,13 +93,25 @@ public class SysLoginService
     public void validateCaptcha(String username, String code, String uuid) throws Exception
     {
         String verifyKey = "Code:" + uuid;
+        System.out.println("111！");
+        System.out.println("222！");
+        System.out.println("校验验证码成功！");
+        System.out.println("校验验证码成功！");
         System.out.println("yes");
         String captcha = redisCache.getCacheObject(verifyKey);
         if (captcha == null || !code.equalsIgnoreCase(captcha)){
-            System.out.println("yes");
-            throw new Exception("校验验证码错误！!!");
+            System.out.println("校验验证码成功！");
+            System.out.println("校验验证码成功！");
+            System.out.println("校验验证码成功！");
+            System.out.println("23132！");
+
+            throw new Exception("校验验证码错误！");
         }else {
-            System.out.println("校验验证码成功！123213");
+            System.out.println("校验验证码成功！");
+            System.out.println("校验验证码成功！");
+            System.out.println("校验验证码成功！");
+            System.out.println("校验验证码成功！");
+
             redisCache.deleteObject(verifyKey);
         }
     }

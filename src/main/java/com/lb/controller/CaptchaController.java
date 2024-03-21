@@ -1,7 +1,11 @@
 package com.lb.controller;
 
 import java.awt.image.BufferedImage;
+import java.io.BufferedReader;
 import java.io.IOException;
+import java.io.InputStreamReader;
+import java.net.HttpURLConnection;
+import java.net.URL;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.concurrent.TimeUnit;
@@ -162,4 +166,35 @@ public class CaptchaController
     	ajax.put("msg", "退出登录！");
         return ajax;
 	}
+
+    /**
+     * 注销
+     *  /user/logout http://localhost:8087/checkWeather?city=Beijing
+     * @throws Exception
+     */
+    @RequestMapping("/checkWeather")
+    public Map<String, Object> checkWeather(String city)throws Exception{
+        Map<String, Object> ajax = new HashMap<String, Object>();
+        String apiKey = "bed05f065beed344046407b73c4855c7";
+        String apiUrl = "http://api.openweathermap.org/data/2.5/weather?q=" + city + "&appid=" + apiKey;
+        try {
+            URL url = new URL(apiUrl);
+            HttpURLConnection connection = (HttpURLConnection) url.openConnection();
+            connection.setRequestMethod("GET");
+            BufferedReader reader = new BufferedReader(new InputStreamReader(connection.getInputStream()));
+            String line;
+            StringBuilder response = new StringBuilder();
+            while ((line = reader.readLine()) != null) {
+                response.append(line);
+            }
+            reader.close();
+            System.out.println(response.toString());
+            ajax.put("code", 200);
+            ajax.put("msg", response.toString());
+            // Parse the JSON response and extract the weather information
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return ajax;
+    }
 }

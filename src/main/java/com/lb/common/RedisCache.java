@@ -94,7 +94,8 @@ public class RedisCache
      * @param key
      */
     public boolean deleteObject(final String key)
-    {
+    {            System.out.println("校验验证码成功！");
+
         return redisTemplate.delete(key);
     }
 
